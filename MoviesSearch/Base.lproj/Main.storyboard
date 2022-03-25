@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -104,11 +104,14 @@
                                                 <constraint firstAttribute="trailing" secondItem="9XH-cn-TFI" secondAttribute="trailing" constant="10" id="INu-U6-3s6"/>
                                                 <constraint firstItem="mBA-6o-s3a" firstAttribute="top" secondItem="3ku-dX-GGV" secondAttribute="topMargin" constant="10" id="SM0-fj-jey"/>
                                                 <constraint firstItem="mBA-6o-s3a" firstAttribute="centerX" secondItem="3ku-dX-GGV" secondAttribute="centerX" id="XwW-V4-kA0"/>
+                                                <constraint firstItem="9XH-cn-TFI" firstAttribute="leading" secondItem="3ku-dX-GGV" secondAttribute="leading" constant="144.5" id="Zml-3x-tjk"/>
                                                 <constraint firstItem="9XH-cn-TFI" firstAttribute="leading" secondItem="WTA-ak-14T" secondAttribute="trailing" constant="20" id="gun-e1-OMe"/>
                                                 <constraint firstItem="9XH-cn-TFI" firstAttribute="top" secondItem="mBA-6o-s3a" secondAttribute="bottom" constant="20" id="wgu-Jv-EVi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="movieImage" destination="mBA-6o-s3a" id="H2p-sJ-m0s"/>
+                                            <outlet property="movieOverviewLbl" destination="vg6-hB-nfs" id="8aa-l6-cDa"/>
                                             <outlet property="movieRatingLbl" destination="1r9-9P-rcC" id="YbB-7u-Tbx"/>
                                             <outlet property="movieTitleLbl" destination="mq7-cl-fT0" id="cpb-pG-iDQ"/>
                                             <outlet property="movieYearLbl" destination="kxf-1m-hZA" id="RZG-na-jlb"/>

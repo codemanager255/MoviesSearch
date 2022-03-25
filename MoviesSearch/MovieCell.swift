@@ -13,7 +13,9 @@ class MovieCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var movieOverviewLbl: UILabel!
+    
     @IBOutlet weak var movieRatingLbl: UILabel!
     
     @IBOutlet weak var movieYearLbl: UILabel!
