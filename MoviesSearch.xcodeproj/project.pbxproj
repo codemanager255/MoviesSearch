@@ -107,14 +107,14 @@
 			children = (
 				04145F7C27E8EBF400FF27A0 /* AppDelegate.swift */,
 				04145F7E27E8EBF400FF27A0 /* SceneDelegate.swift */,
+				843D439F27EDD650007B15FC /* MovieData.swift */,
 				04145F8027E8EBF400FF27A0 /* MovieViewController.swift */,
+				843D43A127EDDEF7007B15FC /* UIImageView+Extension.swift */,
 				84F7EC2F27EB4C6B002281AE /* MovieCell.swift */,
 				04145F8227E8EBF400FF27A0 /* Main.storyboard */,
 				04145F8527E8EBF600FF27A0 /* Assets.xcassets */,
 				04145F8727E8EBF600FF27A0 /* LaunchScreen.storyboard */,
 				04145F8A27E8EBF600FF27A0 /* Info.plist */,
-				843D439F27EDD650007B15FC /* MovieData.swift */,
-				843D43A127EDDEF7007B15FC /* UIImageView+Extension.swift */,
 			);
 			path = MoviesSearch;
 			sourceTree = "<group>";

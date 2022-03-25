@@ -7,9 +7,22 @@
 
 import Foundation
 
-struct MovieData {
+struct MovieData: Decodable {
+    let results: [result]
+}
+
+struct result {
     let title: String
-    let date: String
+    let releaseDate: String
     let overview: String
+    let posterPath: String
     let rating: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "original_title"
+        case releaseDate = "release_date"
+        case overview
+        case posterPath = "poster_path"
+        case rating = "vote_average"
+    }
 }
