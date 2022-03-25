@@ -18,7 +18,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        // Do any additional setup after loading the view.
+        let email = emailAddressTextField.text
+        let password = passwordTextField.text
+        
     }
     
     
@@ -26,9 +28,10 @@ class ViewController: UIViewController {
         
         if emailAddressTextField.text == "" {
             passwordTextField.text == ""
-            return "please enter credentials"
+            
+            return nil
         }
-        
+            
         return nil
     }
     
@@ -41,17 +44,20 @@ class ViewController: UIViewController {
   }
     
    func validateFields() {
-       Auth.auth().signIn(withEmail: "matt@test.com", password: "123456") { [weak self] authResult, err in
+       Auth.auth().signIn(withEmail: emailAddressTextField.text ?? "", password: passwordTextField.text ?? "") {[weak self] authResult, err in
            guard let strongSelf = self else {return}
         if let err = err {
-           print(err.localizedDescription)
+        // print(err.localizedDescription)
+           print("Please enter your credentials")
             
                  }
        if Auth.auth().currentUser != nil {
            print(Auth.auth().currentUser?.uid)
+           print("Login Validation Completed Using Firebase")
      }
   }
 
 }
 
 }
+
