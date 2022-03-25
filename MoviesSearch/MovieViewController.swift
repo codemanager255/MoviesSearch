@@ -9,7 +9,22 @@ import UIKit
 
 class MovieViewController: UIViewController {
     
+    
     var movieList: [MovieData] = []
+    @IBOutlet weak var movieTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        searchBar.delegate = self
+        populateMovieArray()
+        
+        movieTableView.dataSource = self
+        // Do any additional setup after loading the view.
+    }
+    
     
     func populateMovieArray () {
         let m1 = MovieData(title: "Star Wars", date: "1977-05-25", overview: "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.", rating: "8.2")
@@ -18,23 +33,17 @@ class MovieViewController: UIViewController {
         movieList = [m1, m2]
     }
     
-    
-    
-
-    @IBOutlet weak var movieTableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        populateMovieArray()
-        
-        movieTableView.dataSource = self
-        // Do any additional setup after loading the view.
-    }
-
-    
 
 }
 
+extension MovieViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let textEntered = searchBar.text ?? "no text"
+        print("you searched for \(textEntered)")
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+    }
+}
 
 
 extension MovieViewController: UITableViewDataSource {

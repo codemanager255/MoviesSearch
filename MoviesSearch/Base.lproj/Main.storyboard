@@ -134,6 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="movieTableView" destination="3ME-mt-6XZ" id="iHb-u7-I2X"/>
+                        <outlet property="searchBar" destination="L83-9J-Kl5" id="BoH-Y0-iSS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
