@@ -9,30 +9,17 @@ import UIKit
 
 class MovieViewController: UIViewController {
     
-    var movieList: [MovieData] = []
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    var dataReceivedFromAPI: MovieData?
     
+    let url = "https://api.themoviedb.org/3/search/movie?api_key=3215a185b25eb297a66e63d137fb994f&language=en-US&query="
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchBar.delegate = self
-       // populateMovieArray()
-        
         movieTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
-    
-    
-//    func populateMovieArray () {
-//        let m1 = MovieData(title: "Star Wars", date: "1977-05-25", overview: "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.", rating: "8.2")
-//        let m2 = MovieData(title: "Star Trek Beyond", date: "2016-07-07", overview: "The USS Enterprise crew explores the furthest reaches of uncharted space, where they encounter a mysterious new enemy who puts them and everything the Federation stands for to the test.popularity", rating: "6.8")
-//
-//        movieList = [m1, m2]
-//    }
-//
-
 }
 
 extension MovieViewController: UISearchBarDelegate {
@@ -41,31 +28,67 @@ extension MovieViewController: UISearchBarDelegate {
         print("you searched for \(textEntered)")
         searchBar.resignFirstResponder()
         searchBar.text = ""
+        let requestUrl = "\(url)\(textEntered)"
+        performRequest(requestUrl: requestUrl)
+        movieTableView.reloadData()
     }
 }
 
 
 extension MovieViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return dataReceivedFromAPI?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = movieTableView.dequeueReusableCell(withIdentifier: "cell") as! MovieCell
-        
-        cell.movieTitleLbl.text = movieList[indexPath.row].title
-        cell.movieYearLbl.text = movieList[indexPath.row].date
-        cell.movieRatingLbl.text = movieList[indexPath.row].rating
-        cell.movieOverviewLbl.text = movieList[indexPath.row].overview
-        
-        
-        cell.movieImage.load(urlString: "https://image.tmdb.org/t/p/w300/lV5OpzAss1z06YNagOVap1I35mH.jpg?api_key=3215a185b25eb297a66e63d137fb994f")
-        
-        
+
+        cell.movieTitleLbl.text = dataReceivedFromAPI?.results[indexPath.row].title ?? "Unavailable"
+        cell.movieYearLbl.text = dataReceivedFromAPI?.results[indexPath.row].releaseDate ?? "Unavailable"
+        cell.movieRatingLbl.text = "\( dataReceivedFromAPI?.results[indexPath.row].rating ?? 0.0)"
+        cell.movieOverviewLbl.text = dataReceivedFromAPI?.results[indexPath.row].overview  ?? "Unavailable"
+        let imageUrl = "https://image.tmdb.org/t/p/original\(dataReceivedFromAPI?.results[indexPath.row].posterPath ?? "")"
+        cell.movieImage.load(urlString: imageUrl)
+        movieTableView.rowHeight = UITableView.automaticDimension
         
         return cell
     }
     
     
+    func performRequest(requestUrl: String){
+        let urlSession = URLSession.shared
+        guard let url = URL(string: requestUrl)
+        else{
+            return
+        }
+        
+        let dataTask = urlSession.dataTask(with: url){ data, response, error in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            if let safeData = data{
+                self.parseJSON(movieData: safeData)
+            }
+        }
+        dataTask.resume()
+        
+    }
+    
+    func parseJSON(movieData: Data){
+        let decoder = JSONDecoder()
+        do{
+            let decodedData = try decoder.decode(MovieData.self, from: movieData)
+            dataReceivedFromAPI = decodedData
+            
+            DispatchQueue.main.async {
+                self.movieTableView.reloadData()
+            }
+            
+        } catch{
+            print(error)
+        }
+    }
 }
 

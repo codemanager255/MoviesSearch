@@ -15,8 +15,8 @@ struct result: Decodable {
     let title: String
     let releaseDate: String
     let overview: String
-    let posterPath: String
-    let rating: String
+    let posterPath: String?
+    let rating: Double
     
     enum CodingKeys: String, CodingKey {
         case title = "original_title"
