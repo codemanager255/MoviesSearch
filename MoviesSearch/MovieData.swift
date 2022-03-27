@@ -11,7 +11,7 @@ struct MovieData: Decodable {
     let results: [result]
 }
 
-struct result {
+struct result: Decodable {
     let title: String
     let releaseDate: String
     let overview: String

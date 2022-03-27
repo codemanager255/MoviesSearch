@@ -10,7 +10,6 @@ import UIKit
 class MovieViewController: UIViewController {
     
     var movieList: [MovieData] = []
-   // var movieList: [MovieData] = []
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -54,10 +53,10 @@ extension MovieViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = movieTableView.dequeueReusableCell(withIdentifier: "cell") as! MovieCell
         
-//        cell.movieTitleLbl.text = movieList[indexPath.row].title
-//        cell.movieYearLbl.text = movieList[indexPath.row].date
-//        cell.movieRatingLbl.text = movieList[indexPath.row].rating
-//        cell.movieOverviewLbl.text = movieList[indexPath.row].overview
+        cell.movieTitleLbl.text = movieList[indexPath.row].title
+        cell.movieYearLbl.text = movieList[indexPath.row].date
+        cell.movieRatingLbl.text = movieList[indexPath.row].rating
+        cell.movieOverviewLbl.text = movieList[indexPath.row].overview
         
         
         cell.movieImage.load(urlString: "https://image.tmdb.org/t/p/w300/lV5OpzAss1z06YNagOVap1I35mH.jpg?api_key=3215a185b25eb297a66e63d137fb994f")
