@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailAddressTextField: UITextField!
     
@@ -17,10 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let email = emailAddressTextField.text
-        let password = passwordTextField.text
-        
     }
     
     
@@ -28,16 +24,13 @@ class ViewController: UIViewController {
         
         if emailAddressTextField.text == "" {
             passwordTextField.text == ""
-            
             return nil
         }
-            
         return nil
     }
     
     
     @IBAction func loginButton(_ sender: Any) {
-        
         let email = emailAddressTextField.text
         let password = passwordTextField.text
         validateFields()
@@ -47,13 +40,19 @@ class ViewController: UIViewController {
        Auth.auth().signIn(withEmail: emailAddressTextField.text ?? "", password: passwordTextField.text ?? "") {[weak self] authResult, err in
            guard let strongSelf = self else {return}
         if let err = err {
-        // print(err.localizedDescription)
-           print("Please enter your credentials")
+         //print(err.localizedDescription)
+            
+            let failureMessage = "Login Failure"
+        Utility.shared.showAlert(ViewController: self!, title: "Alert!", failureMessage)
+           //print("Please enter your credentials")
             
                  }
        if Auth.auth().currentUser != nil {
            print(Auth.auth().currentUser?.uid)
-           print("Login Validation Completed Using Firebase")
+           
+           let successMessage = "Login Success"
+           Utility.shared.showAlert(ViewController: self!, title: "Alert!", successMessage)
+           //print("Login Validation Completed Using Firebase")
      }
   }
 
