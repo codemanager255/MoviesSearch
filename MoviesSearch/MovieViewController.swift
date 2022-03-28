@@ -7,7 +7,7 @@
 
 import UIKit
 protocol MovieViewControllerType: AnyObject{
-    func dataReceivedFromAPINetwork(safeData: MovieData)
+    func refreshTableView()
 }
 class MovieViewController: UIViewController, MovieViewControllerType {
     
@@ -29,7 +29,6 @@ extension MovieViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchBar.text = ""
         movieViewModelType.informNetworkManagerToPerformRequest(textEntered: textEntered, caller: self )
-        movieTableView.reloadData()
     }
 }
 
@@ -56,8 +55,8 @@ extension MovieViewController: UITableViewDataSource {
 }
 
 extension MovieViewController {
-    func dataReceivedFromAPINetwork(safeData: MovieData) {
-        movieViewModelType.dataReceivedFromAPINetwork(safeData: safeData)
+    
+    func refreshTableView(){
         DispatchQueue.main.async {
             self.movieTableView.reloadData()
         }

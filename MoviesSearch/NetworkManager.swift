@@ -8,15 +8,12 @@
 import Foundation
 
 protocol Networkable{
-    var delegate: MovieViewControllerType? {get set}
-    func performRequest(requestUrl: String)
+    func performRequest(requestUrl: String, completionHandler:@escaping(Result<MovieData, Error>) -> Void)
 }
 
-class NetworkManager{
-    
-    weak var delegate: MovieViewControllerType?
-    
-    func performRequest(requestUrl: String){
+class NetworkManager: Networkable{
+        
+    func performRequest(requestUrl: String, completionHandler:@escaping(Result<MovieData, Error>) -> Void){
         let urlSession = URLSession.shared
         guard let url = URL(string: requestUrl)
         else{
@@ -30,27 +27,20 @@ class NetworkManager{
                 return
             }
             if let safeData = data{
-                self.parseJSON(movieData: safeData)
+                let decoder = JSONDecoder()
+                do{
+                    let decodedData = try decoder.decode(MovieData.self, from: safeData)
+                    completionHandler(.success(decodedData))
+                    
+                } catch{
+                    completionHandler(.failure(error))
+                    print(error)
+                }
             }
         }
         dataTask.resume()
         
     }
     
-    func parseJSON(movieData: Data){
-        let decoder = JSONDecoder()
-        do{
-            let decodedData = try decoder.decode(MovieData.self, from: movieData)
-            let  dataReceivedFromAPI = decodedData
-            self.delegate?.dataReceivedFromAPINetwork(safeData: dataReceivedFromAPI)
-//            
-//            DispatchQueue.main.async {
-//    //            self.movieTableView.reloadData()
-//            }
-            
-        } catch{
-            print(error)
-        }
-    }
 
 }

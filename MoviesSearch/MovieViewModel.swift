@@ -9,12 +9,12 @@ import Foundation
 protocol MovieViewModelType: AnyObject{
     var dataReceivedFromAPI: MovieData? {get}
     func informNetworkManagerToPerformRequest(textEntered: String, caller: MovieViewControllerType)
-    func dataReceivedFromAPINetwork(safeData: MovieData)
+//    func dataReceivedFromAPINetwork(safeData: MovieData)
     func getNumberOfItems() -> Int
 }
 
 class MovieViewModel: MovieViewModelType{
-    var networkManager = NetworkManager()
+    var networkManager:Networkable = NetworkManager()
     var dataReceivedFromAPI: MovieData?
     weak var delegate: MovieViewControllerType?
     
@@ -23,10 +23,20 @@ class MovieViewModel: MovieViewModelType{
     
     
     func informNetworkManagerToPerformRequest(textEntered: String, caller: MovieViewControllerType){
-        networkManager.delegate = caller
         let requestUrl = "\(url)\(textEntered)"
-        networkManager.performRequest(requestUrl: requestUrl)
-        print("perform request was called from the MovieView Model")
+        networkManager.performRequest(requestUrl: requestUrl) {[weak self] result in
+            switch(result){
+            case .success(let movieData):
+                self?.dataReceivedFromAPI = movieData
+                caller.refreshTableView()
+            case .failure(let error):
+                print(error)
+            }
+            
+            
+        }
+            
+        
     }
 
     
@@ -34,8 +44,8 @@ class MovieViewModel: MovieViewModelType{
         return dataReceivedFromAPI?.results.count ?? 0
     }
     
-    func dataReceivedFromAPINetwork(safeData: MovieData){
-        dataReceivedFromAPI = safeData
-    }
+//    func dataReceivedFromAPINetwork(safeData: MovieData){
+//        dataReceivedFromAPI = safeData
+//    }
 
 }
