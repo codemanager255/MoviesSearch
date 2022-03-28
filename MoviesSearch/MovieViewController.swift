@@ -12,6 +12,7 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     var dataReceivedFromAPI: MovieData?
+    let movieViewModelType: MovieViewModelType = MovieViewModel()
     
     let url = "https://api.themoviedb.org/3/search/movie?api_key=3215a185b25eb297a66e63d137fb994f&language=en-US&query="
     
@@ -24,13 +25,18 @@ class MovieViewController: UIViewController {
 
 extension MovieViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let textEntered = searchBar.text ?? "no text"
+        let textEntered = searchBar.text ?? ""
         print("you searched for \(textEntered)")
         searchBar.resignFirstResponder()
         searchBar.text = ""
-        let requestUrl = "\(url)\(textEntered)"
-        performRequest(requestUrl: requestUrl)
+   //     let requestUrl = "\(url)\(textEntered)"
+        movieViewModelType.informNetworkManagerToPerformRequest(textEntered: textEntered)
+        refreshTableView()
+        self.dataReceivedFromAPI = movieViewModelType.dataReceivedFromAPI
+   //     performRequest(requestUrl: requestUrl)
         movieTableView.reloadData()
+        print(movieViewModelType.dataReceivedFromAPI?.results)
+
     }
 }
 
@@ -55,40 +61,46 @@ extension MovieViewController: UITableViewDataSource {
     }
     
     
-    func performRequest(requestUrl: String){
-        let urlSession = URLSession.shared
-        guard let url = URL(string: requestUrl)
-        else{
-            return
-        }
-        
-        let dataTask = urlSession.dataTask(with: url){ data, response, error in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            if let safeData = data{
-                self.parseJSON(movieData: safeData)
-            }
-        }
-        dataTask.resume()
-        
-    }
+//    func performRequest(requestUrl: String){
+//        let urlSession = URLSession.shared
+//        guard let url = URL(string: requestUrl)
+//        else{
+//            return
+//        }
+//
+//        let dataTask = urlSession.dataTask(with: url){ data, response, error in
+//
+//            if error != nil {
+//                print(error!)
+//                return
+//            }
+//            if let safeData = data{
+//                self.parseJSON(movieData: safeData)
+//            }
+//        }
+//        dataTask.resume()
+//
+//    }
+//
+//    func parseJSON(movieData: Data){
+//        let decoder = JSONDecoder()
+//        do{
+//            let decodedData = try decoder.decode(MovieData.self, from: movieData)
+//            dataReceivedFromAPI = decodedData
+//
+//            DispatchQueue.main.async {
+//                self.movieTableView.reloadData()
+//            }
+//
+//        } catch{
+//            print(error)
+//        }
+//    }
     
-    func parseJSON(movieData: Data){
-        let decoder = JSONDecoder()
-        do{
-            let decodedData = try decoder.decode(MovieData.self, from: movieData)
-            dataReceivedFromAPI = decodedData
-            
-            DispatchQueue.main.async {
-                self.movieTableView.reloadData()
-            }
-            
-        } catch{
-            print(error)
-        }
+    func refreshTableView(){
+                    DispatchQueue.main.async {
+                        self.movieTableView.reloadData()
+                    }
     }
 }
 
