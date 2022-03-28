@@ -10,6 +10,9 @@ import UIKit
 
 class FavouriteViewController: UIViewController {
     
+    var favouriteViewModel : FavouritesViewModel!
+    
+    
     @IBOutlet weak var tableView: UITableView!
     var movies: [FavMovies] = []
     var cellId: Int64 = 0
@@ -21,12 +24,12 @@ class FavouriteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        movies = FavMovies.getEntitys(moc: CoreDataManager.shared.persistentContainer.viewContext)
+        movies = favouriteViewModel.getEntities()
         tableView.reloadData()
     }
     
     @IBAction func unfavBtn(_ sender: Any) {
-        FavMovies.removeEntity(id: cellId)
+        favouriteViewModel.removeMovie(id: cellId)
         tableView.reloadData()
     }
     
@@ -45,7 +48,7 @@ extension FavouriteViewController: UITableViewDataSource {
         cell.releaseDateLbl.text = movies[indexPath.row].releaseDate
         let path = movies[indexPath.row].imagePath
         let imageReturnedURL = "https://image.tmdb.org/t/p/w300/\(path)?api_key=3215a185b25eb297a66e63d137fb994f"
-        cell.favImg.downloadImg(owner: imageReturnedURL)
+//        cell.favImg.downloadImg(owner: imageReturnedURL)
         return cell
     }
 }
