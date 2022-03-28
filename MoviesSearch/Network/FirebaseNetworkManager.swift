@@ -9,31 +9,28 @@ import Foundation
 import Firebase
 
 protocol FirebaseNetworkManagerType{
-    func validateFields(userEmail: String?, password: String?)-> String?
+    func validateFields(userEmail: String?, password: String?,completionHandler:@escaping(_ responce: Bool)->Void)
     
 }
 
-class FirebaseNetworkManager {
-
-//func validateFields(userEmail: String?, password: String?)-> String? {
-//    
-//    var responce = ""
-//    
-//           Auth.auth().signIn(withEmail: userEmail ?? "", password: password ?? "") { [weak self] authResult, err in
-//               guard let strongSelf = self else {return}
-//    
-//               if let err = err {
-//               print(err.localizedDescription)
-//                   responce = "Login Failure"
-//                }
-//    
-//           if Auth.auth().currentUser != nil {
-//               print(Auth.auth().currentUser?.uid)
-//               responce = "Login Success"
-//    
-//         }
-//           }
-//    return responce
-//}
-//}
+class FirebaseNetworkManager: FirebaseNetworkManagerType {
+    
+    func validateFields(userEmail: String?, password: String?,completionHandler:@escaping(_ responce: Bool)->Void) {
+        
+        
+        
+        Auth.auth().signIn(withEmail: userEmail ?? "", password: password ?? "") { authResult, error in
+            
+            if  error != nil {
+                completionHandler(false)
+            }
+            
+            if Auth.auth().currentUser != nil {
+                completionHandler(true)
+                
+            }
+        }
+        
+    }
 }
+

@@ -11,26 +11,21 @@ import Firebase
 
 class LoginViewModel {
     
-    var networkManger = FirebaseNetworkManager()
-    func validateFields(userEmail: String?, password: String?)-> String? {
+    
+  private let firebaseNetworkManager: FirebaseNetworkManagerType
+    
+    init(firebaseNetworkManager: FirebaseNetworkManagerType){
+        self.firebaseNetworkManager = firebaseNetworkManager
+    }
 
-        var responce = ""
-
-               Auth.auth().signIn(withEmail: userEmail ?? "", password: password ?? "") { [weak self] authResult, err in
-                   guard let strongSelf = self else {return}
-
-                   if let err = err {
-                   print(err.localizedDescription)
-                       responce = "Login Failure"
-                    }
-
-               if Auth.auth().currentUser != nil {
-                   print(Auth.auth().currentUser?.uid)
-                   responce = "Login Success"
-
-             }
-               }
-        return responce
+    func validateFields(userEmail: String?, password: String?,completionHandler:@escaping(_ responce: Bool)->Void){
+        
+        firebaseNetworkManager.validateFields(userEmail: userEmail, password: password) { responce in
+            
+            completionHandler(responce)
+        }
+            
+       
     }
     
     

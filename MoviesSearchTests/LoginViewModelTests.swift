@@ -11,14 +11,14 @@ import XCTest
 
 class LoginViewModelTests: XCTestCase {
     
-   // var mockNetwork: FirebaseMockNetworkManager!
-   //      var viewModel: LoginViewModel!
+   
+    var viewModel: LoginViewModel!
  
     
     var firebasemocknetwork = FirebaseMockNetworkManager()
     override func setUpWithError() throws {
         
-     //   viewModel.networkManger = mockNetwork
+        viewModel = LoginViewModel(firebaseNetworkManager: firebasemocknetwork)
         
     }
 
@@ -27,78 +27,23 @@ class LoginViewModelTests: XCTestCase {
     }
     
     
-    
     func testLoginValidationSuccess() {
             // GIVEN
-             let userEmail = "venkat@test.com"
+            let userEmail = "venkat@test.com"
             let password = "123456"
-            let jsonName = "FirebaseSuccess"
         
-            // When
-        firebasemocknetwork.validateFields(userEmail: userEmail, password: password, fileName: jsonName)
-         
-        //AssertStatements
-        let actualOutput = firebasemocknetwork.dataResponce
-    
-            // Then
-        let expectedOutput = "Success"
-         XCTAssertEqual(actualOutput, expectedOutput)
-
+        viewModel.validateFields(userEmail: userEmail, password: password) { isLoginResponce in
+            XCTAssertTrue(isLoginResponce)
         }
+}
     
     func testLoginValidationFailure() {
             // GIVEN
-             let userEmail = "venkat@test.com"
+            let userEmail = "venkatrr@test.com"
             let password = "123456"
-            let jsonName = "FirebaseFailure"
-            // When
-        firebasemocknetwork.validateFields(userEmail: userEmail, password: password, fileName: jsonName)
-         
-        //AssertStatements
-        let actualOutput = firebasemocknetwork.dataResponce
-    
-            // Then
-        let expectedOutput = "failure"
-         XCTAssertEqual(actualOutput, expectedOutput)
-
+        
+        viewModel.validateFields(userEmail: userEmail, password: password) { isLoginResponce in
+            XCTAssertFalse(isLoginResponce)
         }
-
-//    func testValidateLogin_success() {
-//
-//        //Given
-//        //Create object of LoginViewModel
-//        let loginViewModel = LoginViewModel()
-//
-//        let userName = "venkat@test.com"
-//        let password = "123456"
-//        //When
-////      let actualOutput =
-////        loginViewModel.validateLogin(userName: userName, password: password)
-//        //Then
-//        let expectedOutput = true
-//
-//        //assert Statements
-//      //  XCTAssertEqual(actualOutput, expectedOutput)
-//
-//    }
-    
-    func testValidateLogin_failure(){
-        
-        //Given
-        let loginViewModel = LoginViewModel()
-        
-        let userName = "Venkat"
-        let password = "123"
-        
-        //When
-        //let actualOutput =
-//        loginViewModel.validateLogin(userName: userName, password: password)
-        
-        //Then
-        let expectedOutput = false
-        
-        //assert Statements
-     //  XCTAssertEqual(actualOutput, expectedOutput)
-        
-    }
+}
 }

@@ -8,30 +8,30 @@
 import UIKit
 import FirebaseAuth
 
-
-
 class ViewController: UIViewController {
+    
+    var loginViewModel = LoginViewModel(firebaseNetworkManager: FirebaseNetworkManager())
     
     @IBOutlet weak var emailAddressTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    let loginViewModel = LoginViewModel()
-  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
     }
     
-
-    
     @IBAction func loginButton(_ sender: Any) {
-        
-        if let message = loginViewModel.validateFields(userEmail: emailAddressTextField.text, password: passwordTextField.text){
-            Utility.shared.showAlert(self, "Alert!", message)
-        }
+        var message: String = ""
+        loginViewModel.validateFields(userEmail: emailAddressTextField.text, password: passwordTextField.text, completionHandler: { loginResponce in
+            if loginResponce == true{
+                message = "User successfully login"
+            }else{
+                message = "Login failure "
+            }
+            Utility.shared.showAlert(self, "Alert!",message)
+        })
         
 
     

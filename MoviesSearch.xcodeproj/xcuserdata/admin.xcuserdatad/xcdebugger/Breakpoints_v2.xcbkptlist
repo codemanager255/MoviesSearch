@@ -23,330 +23,193 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D917E58E-C4D3-4F9E-A175-0AB783E86C08"
-            shouldBeEnabled = "Yes"
+            uuid = "0CE4E497-AC1E-46A9-A0BB-2D94F35B0DD5"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoviesSearch/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "validateFields(userEmail:password:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "768D9623-67E1-4425-AE77-A8DEA62AFA77"
+            uuid = "FFED0D9F-88E4-4BFA-9EE9-FAC5A471A975"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoviesSearchTests/FirebaseMockNetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "validateFields(userEmail:password:fileName:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "768D9623-67E1-4425-AE77-A8DEA62AFA77 - e53c36fe2158c854"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "283">
-               </Location>
-               <Location
-                  uuid = "768D9623-67E1-4425-AE77-A8DEA62AFA77 - e53c36fe2158c854"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "275">
-               </Location>
-               <Location
-                  uuid = "768D9623-67E1-4425-AE77-A8DEA62AFA77 - e53c36fe2158c854"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "301">
-               </Location>
-               <Location
-                  uuid = "768D9623-67E1-4425-AE77-A8DEA62AFA77 - e045eea61e870a09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "308">
-               </Location>
-               <Location
-                  uuid = "768D9623-67E1-4425-AE77-A8DEA62AFA77 - 5caa95994bdc2d72"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;, fileName: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "351">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ED366A2C-AB70-423A-93B9-48314034BB07"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MoviesSearchTests/FirebaseMockNetworkManager.swift"
+            filePath = "MoviesSearch/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "validateFields(userEmail:password:fileName:)"
+            landmarkName = "loginButton(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ED366A2C-AB70-423A-93B9-48314034BB07 - e53c36fe2158c9af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1239">
-               </Location>
-               <Location
-                  uuid = "ED366A2C-AB70-423A-93B9-48314034BB07 - e53c36fe2158c9af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1240">
-               </Location>
-               <Location
-                  uuid = "ED366A2C-AB70-423A-93B9-48314034BB07 - e045eea61e870b9d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1254">
-               </Location>
-               <Location
-                  uuid = "ED366A2C-AB70-423A-93B9-48314034BB07 - 5caa95994bdc2ce6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.FirebaseMockNetworkManager.validateFields(userEmail: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;, fileName: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/FirebaseMockNetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1383">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8EBDCFB3-8ADC-44C1-8222-53F467BE7B88"
+            uuid = "7A658B65-3E88-48C0-A99B-A0061D1974AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearch/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A26672D-F5E7-46A6-950C-DD29F8905AFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearchTests/FirebaseMockNetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C62AE03-56A0-4D1C-A0B9-464F03C21951"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearchTests/LoginViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "testLoginValidationSuccess()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47CA1B28-D686-40D8-9B42-AA75F3AB42FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearchTests/FirebaseMockNetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "201ACDFF-B343-46C8-AD43-40B17F0C9C1C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearch/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loginButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23542DB8-CE4A-47D4-A04D-38BAE438A1E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearch/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "loginButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8835D140-9657-4906-B491-E75900833EF6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesSearch/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "loginButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09AC7A0E-60E5-414A-A8A6-7995CA024614"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoviesSearch/Network/FirebaseNetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "FirebaseNetworkManager"
-            landmarkType = "3">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D87C6A58-A850-4FD2-AA06-853A4DE7710B"
+            uuid = "4251B3C6-A301-40D9-8F81-97CBA37A9563"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoviesSearchTests/LoginViewModelTests.swift"
+            filePath = "MoviesSearch/Network/FirebaseNetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "testLoginValidationSuccess()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D87C6A58-A850-4FD2-AA06-853A4DE7710B - c9504329ef8e9e98"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.LoginViewModelTests.testLoginValidation() -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/LoginViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "33">
-               </Location>
-               <Location
-                  uuid = "D87C6A58-A850-4FD2-AA06-853A4DE7710B - c9504329ef8e9e98"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.LoginViewModelTests.testLoginValidation() -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/LoginViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  uuid = "D87C6A58-A850-4FD2-AA06-853A4DE7710B - c7c18cf2d53cabfc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.LoginViewModelTests.testLoginValidationSuccess() -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/LoginViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "120">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "762B79E4-1402-4551-8422-ED55E21F49A0"
+            uuid = "A350926B-48B8-4180-9833-BD1B9047C6BC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoviesSearchTests/LoginViewModelTests.swift"
+            filePath = "MoviesSearch/Network/FirebaseNetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "testLoginValidationSuccess()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "validateFields(userEmail:password:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "762B79E4-1402-4551-8422-ED55E21F49A0 - c9504329ef8e9efd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.LoginViewModelTests.testLoginValidation() -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/LoginViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "762B79E4-1402-4551-8422-ED55E21F49A0 - c9504329ef8e9efd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.LoginViewModelTests.testLoginValidation() -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/LoginViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "192">
-               </Location>
-               <Location
-                  uuid = "762B79E4-1402-4551-8422-ED55E21F49A0 - c7c18cf2d53cab57"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MoviesSearchTests.LoginViewModelTests.testLoginValidationSuccess() -&gt; ()"
-                  moduleName = "MoviesSearchTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/MoviesStories/MoviesSearch/MoviesSearchTests/LoginViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "252">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
