@@ -8,56 +8,34 @@
 import Foundation
 protocol MovieViewModelType: AnyObject{
     var dataReceivedFromAPI: MovieData? {get}
-    func informNetworkManagerToPerformRequest(textEntered: String)
+    func informNetworkManagerToPerformRequest(textEntered: String, caller: MovieViewControllerType)
+    func dataReceivedFromAPINetwork(safeData: MovieData)
+    func getNumberOfItems() -> Int
 }
 
 class MovieViewModel: MovieViewModelType{
     var networkManager = NetworkManager()
     var dataReceivedFromAPI: MovieData?
+    weak var delegate: MovieViewControllerType?
+    
+    
     let url = "https://api.themoviedb.org/3/search/movie?api_key=3215a185b25eb297a66e63d137fb994f&language=en-US&query="
     
     
-    
-    func informNetworkManagerToPerformRequest(textEntered: String){
+    func informNetworkManagerToPerformRequest(textEntered: String, caller: MovieViewControllerType){
+        networkManager.delegate = caller
         let requestUrl = "\(url)\(textEntered)"
+        networkManager.performRequest(requestUrl: requestUrl)
         print("perform request was called from the MovieView Model")
-        performRequest(requestUrl: requestUrl)
+    }
+
+    
+    func getNumberOfItems() -> Int {
+        return dataReceivedFromAPI?.results.count ?? 0
     }
     
-    func performRequest(requestUrl: String){
-        let urlSession = URLSession.shared
-        guard let url = URL(string: requestUrl)
-        else{
-            return
-        }
-        
-        let dataTask = urlSession.dataTask(with: url){ data, response, error in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            if let safeData = data{
-                self.parseJSON(movieData: safeData)
-            }
-        }
-        dataTask.resume()
-        
+    func dataReceivedFromAPINetwork(safeData: MovieData){
+        dataReceivedFromAPI = safeData
     }
-    
-    func parseJSON(movieData: Data){
-        let decoder = JSONDecoder()
-        do{
-            let decodedData = try decoder.decode(MovieData.self, from: movieData)
-            dataReceivedFromAPI = decodedData
-            print("FROM MODEL: \(dataReceivedFromAPI?.results.count)")
-            
-//            DispatchQueue.main.async {
-//                self.movieTableView.reloadData()
-//            }
-            
-        } catch{
-            print(error)
-        }
-    }
+
 }

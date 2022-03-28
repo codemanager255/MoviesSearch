@@ -7,9 +7,14 @@
 
 import Foundation
 
+protocol Networkable{
+    var delegate: MovieViewControllerType? {get set}
+    func performRequest(requestUrl: String)
+}
+
 class NetworkManager{
     
-    
+    weak var delegate: MovieViewControllerType?
     
     func performRequest(requestUrl: String){
         let urlSession = URLSession.shared
@@ -36,12 +41,12 @@ class NetworkManager{
         let decoder = JSONDecoder()
         do{
             let decodedData = try decoder.decode(MovieData.self, from: movieData)
-            
-       //     dataReceivedFromAPI = decodedData
-            
-            DispatchQueue.main.async {
-    //            self.movieTableView.reloadData()
-            }
+            let  dataReceivedFromAPI = decodedData
+            self.delegate?.dataReceivedFromAPINetwork(safeData: dataReceivedFromAPI)
+//            
+//            DispatchQueue.main.async {
+//    //            self.movieTableView.reloadData()
+//            }
             
         } catch{
             print(error)
