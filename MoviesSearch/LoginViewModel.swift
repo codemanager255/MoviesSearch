@@ -2,54 +2,34 @@
 //  LoginViewModel.swift
 //  MoviesSearch
 //
-//  Created by admin on 25/03/2022.
+
+
+//  Created by Admin on 24/03/2022.
+
 //
 
 import Foundation
 import Firebase
 
-//protocol LoginViewModelType {
-//  //  func validateFields()
-//
-//}
-
 
 class LoginViewModel {
     
-   var responce: String = ""
-//
-//    func validateLogin(userName: String, password: String) -> Bool {
-//        if userName == "venkat@test.com" && password == "123456" {
-//            return true
-//        }else {
-//            return false
-//        }
-//    }
     
+  private let firebaseNetworkManager: FirebaseNetworkManagerType
     
-    
+    init(firebaseNetworkManager: FirebaseNetworkManagerType){
+        self.firebaseNetworkManager = firebaseNetworkManager
+    }
 
-
-    func validateFields(userName: String, password: String, completionHandler:@escaping(_ responce: String)->Void) {
-
-    Auth.auth().signIn(withEmail: userName , password: password) { [weak self] authResult, err in
-        guard let strongSelf = self else {return}
-
-        if let err = err {
-        print(err.localizedDescription)
-            strongSelf.responce = "fail"
-            completionHandler(strongSelf.responce)
-         }
-
-    if Auth.auth().currentUser != nil {
-        print(Auth.auth().currentUser?.uid)
-        print("User validated from firebase")
-        strongSelf.responce = "success"
-        completionHandler(strongSelf.responce)
-
-
-  }
+    func validateFields(userEmail: String?, password: String?,completionHandler:@escaping(_ responce: Bool)->Void){
+        
+        firebaseNetworkManager.validateFields(userEmail: userEmail, password: password) { responce in
+            
+            completionHandler(responce)
+        }
+            
+       
+    }
 
 }
-}
-}
+
