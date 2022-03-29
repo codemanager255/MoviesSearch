@@ -8,12 +8,22 @@
 import Foundation
 
 protocol Networkable{
-    func performRequest(requestUrl: String, completionHandler:@escaping(Result<MovieData, Error>) -> Void)
+    func performRequest(requestUrl: String, searchMoviePath: String, MovieParams: [String: String], completionHandler:@escaping(Result<MovieData, Error>) -> Void)
 }
 
 class NetworkManager: Networkable{
         
-    func performRequest(requestUrl: String, completionHandler:@escaping(Result<MovieData, Error>) -> Void){
+    func performRequest(requestUrl: String, searchMoviePath: String, MovieParams: [String: String], completionHandler:@escaping(Result<MovieData, Error>) -> Void){
+        
+        var movieComponents = URLComponents(string: requestUrl.appending(searchMoviePath))
+        
+        let movieQueryItems = MovieParams.map { (key, value) in
+            URLQueryItem(name: key, value: value)
+        }
+        
+        movieComponents?.queryItems = movieQueryItems
+        
+        
         let urlSession = URLSession.shared
         guard let url = URL(string: requestUrl)
         else{

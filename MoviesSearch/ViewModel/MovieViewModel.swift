@@ -21,6 +21,12 @@ class MovieViewModel: MovieViewModelType{
     
     let url = "https://api.themoviedb.org/3/search/movie?api_key=3215a185b25eb297a66e63d137fb994f&language=en-US&query="
     
+    // "https://api.themoviedb.org/3/search/movie?api_key=3215a185b25eb297a66e63d137fb994f&language=en-US&query="
+    
+    // baseUrl = https://api.themoviedb.org/3/
+    // path = search/movie
+    // params = api_key=3215a185b25eb297a66e63d137fb994f&language=en-US&query="
+    
     
     func informNetworkManagerToPerformRequest(textEntered: String, caller: MovieViewControllerType){
         let requestUrl = "\(url)\(textEntered)"
