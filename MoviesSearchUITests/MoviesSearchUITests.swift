@@ -109,7 +109,7 @@ class MoviesSearchUITests: XCTestCase {
            password.tap()
            password.typeText("123456789")
            
-       //    XCUIApplication().staticTexts["Login"].tap()
+           XCUIApplication().staticTexts["Login"].tap()
          
            
            let elementsQuery = app.alerts["Alert!"].scrollViews.otherElements
