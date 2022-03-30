@@ -152,11 +152,11 @@
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="83.705357142857139"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="4YH-A5-Mjq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w4c-Cp-Qep" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CUv-bt-xal"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="CUv-bt-xal"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jv3-kI-zxi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -191,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
