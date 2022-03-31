@@ -1,0 +1,6 @@
+framework module Pods_MoviesSearch_MoviesSearchUITests {
+  umbrella header "Pods-MoviesSearch-MoviesSearchUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
