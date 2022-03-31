@@ -22,6 +22,10 @@ class MoviesSearchUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 135bc8893c0220bf6de1bc7985d307036af37721
     func testMovieHubTitleNavigationIsDisplayed(){
         let app = XCUIApplication()
         app.launch()

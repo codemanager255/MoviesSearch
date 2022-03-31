@@ -11,6 +11,7 @@
 		0404107827F6051D0066657C /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404107727F6051D0066657C /* MovieData.swift */; };
 		0404107927F6071C0066657C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145F8027E8EBF400FF27A0 /* LoginViewController.swift */; };
 		0404107A27F607290066657C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC749127F4AB6E001DCBEC /* Utility.swift */; };
+		0404107D27F609BD0066657C /* FirebaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404107C27F609BD0066657C /* FirebaseNetworkManager.swift */; };
 		04145F7D27E8EBF400FF27A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145F7C27E8EBF400FF27A0 /* AppDelegate.swift */; };
 		04145F7F27E8EBF400FF27A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145F7E27E8EBF400FF27A0 /* SceneDelegate.swift */; };
 		04145F8427E8EBF400FF27A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04145F8227E8EBF400FF27A0 /* Main.storyboard */; };
@@ -29,7 +30,6 @@
 		439CB9006D91AA06643DA878 /* Pods_MoviesSearch_MoviesSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B54A478AAD51E83B9FE315 /* Pods_MoviesSearch_MoviesSearchUITests.framework */; };
 		8419491627EE1D1F0098819F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419491527EE1D1F0098819F /* LoginViewModel.swift */; };
 		846C53E027F492D300EECC61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846C53DF27F492D300EECC61 /* GoogleService-Info.plist */; };
-		84904F0927F1B96E00B46468 /* FirebaseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84904F0827F1B96E00B46468 /* FirebaseNetworkManager.swift */; };
 		84904F0C27F1BB0300B46468 /* FirebaseMockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84904F0B27F1BB0300B46468 /* FirebaseMockNetworkManager.swift */; };
 		84A6404327EC71C8001CC71B /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6404227EC71C8001CC71B /* LoginViewModelTests.swift */; };
 		84EB8E8627F36D2700623266 /* MoviesSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145F9D27E8EBF600FF27A0 /* MoviesSearchUITests.swift */; };
@@ -56,6 +56,7 @@
 /* Begin PBXFileReference section */
 		0404107027F601520066657C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0404107727F6051D0066657C /* MovieData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieData.swift; path = MoviesSearch/MovieData.swift; sourceTree = SOURCE_ROOT; };
+		0404107C27F609BD0066657C /* FirebaseNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseNetworkManager.swift; sourceTree = "<group>"; };
 		04145F7927E8EBF400FF27A0 /* MoviesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04145F7C27E8EBF400FF27A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04145F7E27E8EBF400FF27A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		81B54A478AAD51E83B9FE315 /* Pods_MoviesSearch_MoviesSearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesSearch_MoviesSearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8419491527EE1D1F0098819F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		846C53DF27F492D300EECC61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		84904F0827F1B96E00B46468 /* FirebaseNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNetworkManager.swift; sourceTree = "<group>"; };
 		84904F0B27F1BB0300B46468 /* FirebaseMockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMockNetworkManager.swift; sourceTree = "<group>"; };
 		84A6404227EC71C8001CC71B /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		84FB71B527ECD6CA00743B0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MoviesSearch/Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		84904F0A27F1BA2200B46468 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0404107C27F609BD0066657C /* FirebaseNetworkManager.swift */,
 				0404107027F601520066657C /* NetworkManager.swift */,
-				84904F0827F1B96E00B46468 /* FirebaseNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -513,8 +513,8 @@
 				04CC74A127F4AB6F001DCBEC /* UIImageView+Extension.swift in Sources */,
 				8419491627EE1D1F0098819F /* LoginViewModel.swift in Sources */,
 				04145F7F27E8EBF400FF27A0 /* SceneDelegate.swift in Sources */,
-				84904F0927F1B96E00B46468 /* FirebaseNetworkManager.swift in Sources */,
 				04CC74A327F4AB6F001DCBEC /* MovieViewController.swift in Sources */,
+				0404107D27F609BD0066657C /* FirebaseNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
