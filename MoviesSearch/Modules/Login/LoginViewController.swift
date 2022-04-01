@@ -30,6 +30,9 @@ class LoginViewController: UIViewController {
         loginViewModel.validateFields(userEmail: emailAddressTextField.text, password: passwordTextField.text, completionHandler: { loginResponce in
             if loginResponce == true{
                 message = "User successfully login"
+                let storyboard = UIStoryboard(name: "MovieSearch", bundle: Bundle.main)
+                let vc = storyboard.instantiateViewController(withIdentifier: "MovieViewController") as! MovieViewController
+                self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 message = "Login failure "
             }
