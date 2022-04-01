@@ -8,31 +8,26 @@
 import XCTest
 @testable import MoviesSearch
 
-class FavouritesViewModel : XCTestCase {
-    
-    var mockCoreDataManager : MockCoreDataManager!
-    var favouriteViewModel : FavouritesViewModel = FavouritesViewModel()
-    
-    
-    func testSaveMovie(){}
-    
-    func testGetAllMovies(){}
+class FavouritesViewModelTests : XCTestCase {
     
     
     
-    func testCreateData(){
-        }
-    
-    func testRemoveData(){
-
+    var favMovieViewModel: FavouritesViewModel!
         
-    }
-    
-    override func setUpWithError() throws {
-        <#code#>
-    }
-    
-    override func tearDownWithError() throws {
-        <#code#>
-    }
+        override func setUpWithError() throws {
+            let mockFavRepo = MockFavMovieRepository()
+            favMovieViewModel = FavouritesViewModel(favRepo: mockFavRepo)
+        }
+
+        override func tearDownWithError() throws {
+            // Put teardown code here. This method is called after the invocation of each test method in the class.
+        }
+        
+        
+        func testGetFavMovies() {
+            
+            favMovieViewModel.getFavMovies()
+            
+            XCTAssertEqual(favMovieViewModel.movies.count, 2)
+        }
 }

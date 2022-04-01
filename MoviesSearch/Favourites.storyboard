@@ -58,7 +58,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                                                     <connections>
-                                                        <action selector="unfavBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oBi-Px-Uha"/>
+                                                        <action selector="unfavBtn:" destination="eLd-SN-mng" eventType="touchUpInside" id="fTO-m5-U68"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -80,6 +80,7 @@
                                             <outlet property="favImg" destination="Yo7-LX-iJ4" id="F5o-vf-qdb"/>
                                             <outlet property="releaseDateLbl" destination="DsH-UB-94f" id="CVD-pV-xV3"/>
                                             <outlet property="titleLbl" destination="bfZ-gg-09J" id="Hax-qW-VfR"/>
+                                            <outlet property="unFavButton" destination="nEv-Iu-kb2" id="1my-wh-vQ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -10,26 +10,32 @@ import CoreData
 
 extension FavMovies {
     
-    static func saveEntity(title: String, movieDescription: String, releaseDate: String, imagePath: String, id: Int, moc: NSManagedObjectContext) {
-        let movieEntity = NSEntityDescription.insertNewObject(forEntityName: "FavMovies", into: moc) as! FavMovies
-        
-        movieEntity.title = title
-        movieEntity.movieDescription = movieDescription
-        movieEntity.releaseDate = releaseDate
-        movieEntity.imagePath = imagePath
-        movieEntity.id = Int64(id)
-        
-        CoreDataManager.shared.saveContext()
-    }
+    static func saveMovieEntity(title: String, movieDescription: String, releaseDate: String, imagePath: String, id: Int, moc: NSManagedObjectContext) {
+            let movieEntity = NSEntityDescription.insertNewObject(forEntityName: "FavMovies", into: moc) as! FavMovies
+            let saveFavMovie = getMovieEntity(id: movieEntity.id, moc: CoreDataManager.shared.persistentContainer.viewContext)
+            if saveFavMovie == nil {
+                movieEntity.title = title
+                movieEntity.movieDescription = movieDescription
+                movieEntity.releaseDate = releaseDate
+                movieEntity.imagePath = imagePath
+                movieEntity.id = Int64(id)
+
+                
+                CoreDataManager.shared.saveContext()
+            }
+            else {
+                return
+            }
+        }
     
-    static func removeEntity(id: Int64) {
-        guard let favMovie = getEntity(id: id, moc: CoreDataManager.shared.persistentContainer.viewContext) else {return}
+    static func removeMovieEntity(id: Int64) {
+        guard let favMovie = getMovieEntity(id: id, moc: CoreDataManager.shared.persistentContainer.viewContext) else {return}
         CoreDataManager.shared.persistentContainer.viewContext.delete(favMovie)
         CoreDataManager.shared.saveContext()
 
     }
     
-    static func getEntitys(moc: NSManagedObjectContext) -> [FavMovies] {
+    static func getMoviesEntitys(moc: NSManagedObjectContext) -> [FavMovies] {
         let fr = FavMovies.fetchRequest()
         
         do {
@@ -42,7 +48,7 @@ extension FavMovies {
         }
     }
     
-    static func getEntity(id: Int64, moc: NSManagedObjectContext) -> FavMovies? {
+    static func getMovieEntity(id: Int64, moc: NSManagedObjectContext) -> FavMovies? {
         let movieFecthRequest = FavMovies.fetchRequest()
         movieFecthRequest.fetchLimit = 1
 

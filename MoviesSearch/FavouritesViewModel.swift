@@ -10,15 +10,23 @@ import Foundation
 
 class FavouritesViewModel  {
     
+    var movies: [Movie] = []
 
-//    var  favMovies: FavMovies = FavMovies()
-   
+    let favRepo:FavMovieRepositoryType
+    
+    init(favRepo:FavMovieRepositoryType) {
+        self.favRepo = favRepo
+    }
+    
+    func getFavMovies() {
+        self.movies =  favRepo.getMovies()
+    }
+    
     func removeMovie(id : Int64){
-        FavMovies.removeEntity(id: id)
+        FavMovies.removeMovieEntity(id: id)
+
+        //favRepo.markMoviesAs(movie:Moviee)
     }
-    
-    func getEntities() -> [FavMovies] {
-        FavMovies.getEntitys(moc: CoreDataManager.shared.persistentContainer.viewContext)
-    }
-    
+
+   
 }

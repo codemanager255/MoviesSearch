@@ -8,47 +8,62 @@
 import Foundation
 import UIKit
 
-class FavouriteViewController: UIViewController {
+
+
+class FavouriteViewController: UIViewController{
+    
+    
     
     var favouriteViewModel : FavouritesViewModel!
     
     
     @IBOutlet weak var tableView: UITableView!
-    var movies: [FavMovies] = []
-    var cellId: Int64 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        favouriteViewModel = FavouritesViewModel(favRepo: FavMovieRepository())
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        movies = favouriteViewModel.getEntities()
+        favouriteViewModel.getFavMovies()
         tableView.reloadData()
     }
-    
-    @IBAction func unfavBtn(_ sender: Any) {
-        favouriteViewModel.removeMovie(id: cellId)
-        tableView.reloadData()
-    }
-    
-}
 
-extension FavouriteViewController: UITableViewDataSource {
+    
+    }
+    
+    
+    
+    
+
+
+extension FavouriteViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return favouriteViewModel.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as! FavouritesCell
-        cellId = movies[indexPath.row].id
-        cell.titleLbl.text = movies[indexPath.row].title
-        cell.descLbl.text = movies[indexPath.row].description
-        cell.releaseDateLbl.text = movies[indexPath.row].releaseDate
-        let path = movies[indexPath.row].imagePath
+        let movie = favouriteViewModel.movies[indexPath.row]
+        cell.unFavButton.tag = indexPath.row
+        cell.titleLbl.text = movie.title
+        cell.descLbl.text = movie.movieDescription
+        cell.releaseDateLbl.text = movie.releaseDate
+        let path = movie.imagePath
         let imageReturnedURL = "https://image.tmdb.org/t/p/w300/\(path)?api_key=3215a185b25eb297a66e63d137fb994f"
 //        cell.favImg.downloadImg(owner: imageReturnedURL)
         return cell
     }
+}
+
+extension FavouriteViewController : favouritesCellDelegate {
+    func unfavBtn(_ sender: Any) {
+        
+//        favouriteViewModel.removeMovie(id: Movie[selectedIndex].id)
+    }
+    
+    
+    
 }

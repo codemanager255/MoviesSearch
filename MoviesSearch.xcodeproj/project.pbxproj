@@ -23,8 +23,10 @@
 		848AD94C27EB201E004AB2D5 /* FavouriteMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 848AD94A27EB201E004AB2D5 /* FavouriteMovies.xcdatamodeld */; };
 		848AD94E27EB327E004AB2D5 /* FavouriteMovies+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AD94D27EB327E004AB2D5 /* FavouriteMovies+Extension.swift */; };
 		D40E1E4427F1BF8500E89C33 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E1E4327F1BF8500E89C33 /* FavouritesViewModel.swift */; };
-		D40E1E4627F1C86F00E89C33 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E1E4527F1C86F00E89C33 /* MockCoreDataManager.swift */; };
 		D40E1E4827F1CCE300E89C33 /* FavouritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E1E4727F1CCE300E89C33 /* FavouritesViewModelTests.swift */; };
+		D40E1E4A27F3165600E89C33 /* FavMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E1E4927F3165600E89C33 /* FavMoviesRepository.swift */; };
+		D40E1E4C27F332CE00E89C33 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E1E4B27F332CE00E89C33 /* Movie.swift */; };
+		D40E1E4E27F4673A00E89C33 /* MockFavMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E1E4D27F4673A00E89C33 /* MockFavMovieRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +67,10 @@
 		848AD94B27EB201E004AB2D5 /* FavouriteMovies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteMovies.xcdatamodel; sourceTree = "<group>"; };
 		848AD94D27EB327E004AB2D5 /* FavouriteMovies+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteMovies+Extension.swift"; sourceTree = "<group>"; };
 		D40E1E4327F1BF8500E89C33 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
-		D40E1E4527F1C86F00E89C33 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		D40E1E4727F1CCE300E89C33 /* FavouritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModelTests.swift; sourceTree = "<group>"; };
+		D40E1E4927F3165600E89C33 /* FavMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavMoviesRepository.swift; sourceTree = "<group>"; };
+		D40E1E4B27F332CE00E89C33 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		D40E1E4D27F4673A00E89C33 /* MockFavMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavMovieRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				848AD94D27EB327E004AB2D5 /* FavouriteMovies+Extension.swift */,
 				848AD94A27EB201E004AB2D5 /* FavouriteMovies.xcdatamodeld */,
 				D40E1E4327F1BF8500E89C33 /* FavouritesViewModel.swift */,
+				D40E1E4927F3165600E89C33 /* FavMoviesRepository.swift */,
+				D40E1E4B27F332CE00E89C33 /* Movie.swift */,
 			);
 			path = MoviesSearch;
 			sourceTree = "<group>";
@@ -139,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				04145F9327E8EBF600FF27A0 /* MoviesSearchTests.swift */,
-				D40E1E4527F1C86F00E89C33 /* MockCoreDataManager.swift */,
 				D40E1E4727F1CCE300E89C33 /* FavouritesViewModelTests.swift */,
+				D40E1E4D27F4673A00E89C33 /* MockFavMovieRepository.swift */,
 			);
 			path = MoviesSearchTests;
 			sourceTree = "<group>";
@@ -288,12 +294,14 @@
 			files = (
 				848AD94127EB1C8B004AB2D5 /* FavouriteViewController.swift in Sources */,
 				04145F8127E8EBF400FF27A0 /* ViewController.swift in Sources */,
+				D40E1E4A27F3165600E89C33 /* FavMoviesRepository.swift in Sources */,
 				D40E1E4427F1BF8500E89C33 /* FavouritesViewModel.swift in Sources */,
 				848AD94527EB1EB9004AB2D5 /* FavouritesCell.swift in Sources */,
 				848AD94C27EB201E004AB2D5 /* FavouriteMovies.xcdatamodeld in Sources */,
 				04145F7D27E8EBF400FF27A0 /* AppDelegate.swift in Sources */,
 				848AD94927EB1F7B004AB2D5 /* CoreDataManager.swift in Sources */,
 				04145F7F27E8EBF400FF27A0 /* SceneDelegate.swift in Sources */,
+				D40E1E4C27F332CE00E89C33 /* Movie.swift in Sources */,
 				848AD94E27EB327E004AB2D5 /* FavouriteMovies+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,9 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D40E1E4627F1C86F00E89C33 /* MockCoreDataManager.swift in Sources */,
 				D40E1E4827F1CCE300E89C33 /* FavouritesViewModelTests.swift in Sources */,
 				04145F9427E8EBF600FF27A0 /* MoviesSearchTests.swift in Sources */,
+				D40E1E4E27F4673A00E89C33 /* MockFavMovieRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
