@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
             if loginResponce == true{
                 message = "User successfully login"
                 let storyboard = UIStoryboard(name: "MovieSearch", bundle: Bundle.main)
-                let vc = storyboard.instantiateViewController(withIdentifier: "MovieViewController") as! MovieViewController
+                let vc = storyboard.instantiateViewController(withIdentifier: "MovieViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 message = "Login failure "
